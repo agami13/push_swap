@@ -6,16 +6,16 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/01/14 10:18:53 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/03/31 06:48:36 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-	t_list	*a = ft_lstnew((long *)2);
-	ft_lstadd_back(&a, ft_lstnew((long *)3));
-	swap_a(a);
-	ft_printf("%lu", a -> content);
+	(void)argc;
+	if (checker(argv + 1, argc) == 1)
+		ft_printf("ERROR!\n");
+	return (0);
 }
