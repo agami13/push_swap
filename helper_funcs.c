@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:49:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 03:11:12 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 07:43:09 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,26 @@ char	**free_strs(char **strs)
 int ft_numlen(char **str)
 {
 	int i;
-	int j;
-	int k;
+	// int j;
+	// int k;
 
-	k = 0;
+	// k = 0;
+	// i = 0;
+	// while (str[i])
+	// {
+	// 	j = 0;
+	// 	while (str[i][j])
+	// 	{
+	// 		if (str[i][j] == ' ')
+	// 			k++;
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
+	// return (i);
 	i = 0;
-		ft_printf("k = %s\n", str[0]);
-	while (str[i])
-	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (str[i][j] == ' ')
-				k++;
-			j++;
-		}
+	while(ft_split(str[i], ' '))
 		i++;
-	}
 	return (i);
 }
 
@@ -103,28 +106,58 @@ long	ft_atol(const char *str)
 	return (results * sign);
 }
 
+// char	**spliting_nums(char **av)
+// {
+// 	int	i;
+// 	int	j;
+// 	char **array;
+// 	char *str;
+
+// 	i = 0;
+// 	j = 0;
+// 	str = ft_strdup("");
+// 	while(av[i])
+// 	{
+// 		array = ft_split(av[i], ' ');
+// 		while(array[j])
+// 		{
+// 			str = ft_strjoin(str, array[j]);
+// 			str = ft_strjoin(str, " ");
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	ft_strjoin(str, "\0");
+// 	free_strs(array);
+// 	return (ft_split(str, ' '));
+// }
 char	**spliting_nums(char **av)
 {
-	int	i;
-	int	j;
-	char **array;
-	char *str = NULL;
+    int	i;
+    int	j;
+    char **array;
+    char *str;
+    char *temp;
 
-	i = 0;
-	j = 0;
-	while(av[i])
-	{
-		array = ft_split(av[i], ' ');
-		while(array[j])
-		{
-			ft_strjoin(str, array[j]);
-			ft_strjoin(str, " ");
-			j++;
-		}
-		i++;
-	}
-	ft_strjoin(str, "\0");
-	free_strs(array);
-	ft_printf("str>>>>>>> = %s\n", str);
-	return (ft_split(str, ' '));
+    i = 0;
+    str = ft_strdup("");
+    while(av[i])
+    {
+        array = ft_split(av[i], ' ');
+        j = 0;
+        while(array[j])
+        {
+            temp = ft_strjoin(str, array[j]);
+            free(str);
+            str = temp;
+
+            temp = ft_strjoin(str, " ");
+            free(str);
+            str = temp;
+            j++;
+        }
+        free_strs(array);
+        i++;
+    }
+    return (ft_split(str, ' '));
 }

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 03:05:06 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:05:29 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ int	dup_check(char **av)
 	int	i;
 	int	j;
 	int	*array;
+	int	len;
 
 	i = 0;
-	array =	(int *)malloc(sizeof(int) * (ft_numlen(av)));
-			ft_printf("j = klmlml;m,\n");
+	len = ft_numlen(av);
+	array =	(int *)malloc(sizeof(int) * len + 1);
 	if (!array)
 		return (1);
-	// array[ft_numlen(av)] = 0;
 	while (av[i])
 	{
 		array[i] = ft_atol(av[i]);
 		i++;
 	}
 	i = 0;
-	while (array[i])
+	while (i < len)
 	{
 		j = i + 1;
-		while (array[j])
+		while (j < len)
 		{
 			if (array[i] == array[j])
 				return (1);
@@ -66,6 +66,20 @@ int	checker2(char *av)
 	return (0);
 }
 
+int	nill_check(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (ft_strlen(av[i]) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	checker(char **av)
 {
 	int	i;
@@ -77,7 +91,7 @@ int	checker(char **av)
 	while (av[i])
 	{
 		j = 0;
-		if ((av[i][0] == '\0') || (checker2(av[i]) == 1))
+		if (checker2(av[i]) == 1)
 			return (1);
 		while (av[i][j])
 		{
