@@ -6,17 +6,19 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/01 00:54:10 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 02:51:22 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	t_stack *stack = NULL;
+	char **str = NULL;
 	
-	if (checker(argv + 1, argc) == 1)
+	str = spliting_nums(argv + 1);
+	if (checker(str) == 1)
 		ft_printf("ERROR\n");
 	else
 	{
@@ -32,7 +34,15 @@ int main(int argc, char *argv[])
 		{
 			ft_printf("content = %d\n", stack -> content);
 			stack = stack -> next;
-		}	
+		}
 	}
 	return (0);
 }
+// for int (i = 0; array[i]; i++)
+// {
+// 	for(int j = i + 1; array[j]; j++)
+// 	{
+// 		if (array[i] == array[j])
+// 			return (1);
+// 	}
+// }

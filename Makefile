@@ -2,13 +2,13 @@ NAME	=	push_swap
 
 LIB		=	libft.a
 
-SRCS	=	push_swap.c parcing.c stack_fill.c
+SRCS	=	push_swap.c parcing.c stack_fill.c helper_funcs.c
 
 OBJ		=	$(SRCS:.c=.o)
 
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 
 LIB_PATH =	libft/
 
