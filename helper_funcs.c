@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:49:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 07:43:09 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:49:17 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,62 +26,21 @@ char	**free_strs(char **strs)
 	return (NULL);
 }
 
-int ft_numlen(char **str)
+int	ft_numlen(char **str)
 {
-	int i;
-	// int j;
-	// int k;
+	int	i;
 
-	// k = 0;
-	// i = 0;
-	// while (str[i])
-	// {
-	// 	j = 0;
-	// 	while (str[i][j])
-	// 	{
-	// 		if (str[i][j] == ' ')
-	// 			k++;
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
-	// return (i);
 	i = 0;
-	while(ft_split(str[i], ' '))
+	while (ft_split(str[i], ' '))
 		i++;
 	return (i);
 }
-
-// void	ft_listdelone(t_stack *lst, void (*del)(void *))
-// {
-// 	if (!lst || !del)
-// 		return ;
-// 	del(lst -> content);
-// 	free(lst);
-// }
-
-// void	ft_listclear(t_stack **lst, void (*del)(void *))
-// {
-// 	t_stack	*temp;
-// 	t_stack	*n;
-
-// 	n = *lst;
-// 	if (!del || !lst)
-// 		return ;
-// 	while (n)
-// 	{
-// 		temp = n -> next;
-// 		ft_lstdelone(n, del);
-// 		n = temp;
-// 	}
-// 	*lst = NULL;
-// }
 
 long	ft_atol(const char *str)
 {
 	long long	index;
 	long long	results;
-	int		sign;
+	int			sign;
 
 	index = 0;
 	results = 0;
@@ -106,58 +65,31 @@ long	ft_atol(const char *str)
 	return (results * sign);
 }
 
-// char	**spliting_nums(char **av)
-// {
-// 	int	i;
-// 	int	j;
-// 	char **array;
-// 	char *str;
-
-// 	i = 0;
-// 	j = 0;
-// 	str = ft_strdup("");
-// 	while(av[i])
-// 	{
-// 		array = ft_split(av[i], ' ');
-// 		while(array[j])
-// 		{
-// 			str = ft_strjoin(str, array[j]);
-// 			str = ft_strjoin(str, " ");
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	ft_strjoin(str, "\0");
-// 	free_strs(array);
-// 	return (ft_split(str, ' '));
-// }
 char	**spliting_nums(char **av)
 {
-    int	i;
-    int	j;
-    char **array;
-    char *str;
-    char *temp;
+	int			i;
+	int			j;
+	char		**array;
+	char		*str;
+	char		*temp;
 
-    i = 0;
-    str = ft_strdup("");
-    while(av[i])
-    {
-        array = ft_split(av[i], ' ');
-        j = 0;
-        while(array[j])
-        {
-            temp = ft_strjoin(str, array[j]);
-            free(str);
-            str = temp;
-
-            temp = ft_strjoin(str, " ");
-            free(str);
-            str = temp;
-            j++;
-        }
-        free_strs(array);
-        i++;
-    }
-    return (ft_split(str, ' '));
+	i = 0;
+	str = ft_strdup("");
+	while (av[i])
+	{
+		array = ft_split(av[i], ' ');
+		j = 0;
+		while (array[j])
+		{
+			temp = ft_strjoin(str, array[j]);
+			str = temp;
+			temp = ft_strjoin(str, " ");
+			free(str);
+			str = temp;
+			j++;
+		}
+		free_strs(array);
+		i++;
+	}
+	return (ft_split(str, ' '));
 }

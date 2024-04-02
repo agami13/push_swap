@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 08:14:40 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:59:26 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ typedef struct n_list
 
 // helper funcs
 long		ft_atol(const char *str);
-void		ft_listclear(t_stack **lst, void (*del)(void *));
-void		ft_listdelone(t_stack *lst, void (*del)(void *));
+void		ft_listclear(t_stack **list, void (*del)(int));
+void		ft_listdelone(t_stack *list, void (*del)(int));
 char		**spliting_nums(char **av);
 char		**free_strs(char **strs);
 int			ft_numlen(char **str);
+void		del(int content);
 
 // checker structure
 int			checker(char **av);

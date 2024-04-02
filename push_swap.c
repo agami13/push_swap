@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 07:59:39 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:00:40 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int main(int argc, char **argv)
 	str = spliting_nums(argv + 1);
 	if (argc <= 2)
 		return (0);
-	else if(nill_check(argv + 1) == 1)
-		ft_printf("ERROR\n");
-	else if (checker(str) == 1)
+	else if((nill_check(argv + 1) == 1) || (checker(str) == 1))
 		ft_printf("ERROR\n");
 	else
 	{
@@ -39,6 +37,8 @@ int main(int argc, char **argv)
 			ft_printf("content = %d\n", stack -> content);
 			stack = stack -> next;
 		}
+		ft_listclear(&stack, &del);
 	}
+	free_strs(str);
 	return (0);
 }
