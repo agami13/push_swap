@@ -2,7 +2,7 @@ NAME	=	push_swap
 
 LIB		=	libft.a
 
-SRCS	=	push_swap.c parcing.c
+SRCS	=	push_swap.c parcing.c stack_fill.c
 
 OBJ		=	$(SRCS:.c=.o)
 
