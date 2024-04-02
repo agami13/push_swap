@@ -6,29 +6,17 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 08:05:29 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:17:29 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	dup_check(char **av)
+int	dup_check2(int *array, int len)
 {
 	int	i;
 	int	j;
-	int	*array;
-	int	len;
 
-	i = 0;
-	len = ft_numlen(av);
-	array =	(int *)malloc(sizeof(int) * len + 1);
-	if (!array)
-		return (1);
-	while (av[i])
-	{
-		array[i] = ft_atol(av[i]);
-		i++;
-	}
 	i = 0;
 	while (i < len)
 	{
@@ -41,6 +29,31 @@ int	dup_check(char **av)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	dup_check(char **av)
+{
+	int	i;
+	int	*array;
+	int	len;
+
+	i = 0;
+	len = ft_numlen(av);
+	array = (int *)malloc(sizeof(int) * len + 1);
+	if (!array)
+		return (1);
+	while (av[i])
+	{
+		array[i] = ft_atol(av[i]);
+		i++;
+	}
+	if (dup_check2(array, len) == 1)
+	{
+		free(array);
+		return (1);
+	}
+	free(array);
 	return (0);
 }
 
