@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 04:37:37 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 06:25:23 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,50 +46,99 @@
 // 	return (0);
 // }
 
-int main(int argc, char **argv)
-{
-    t_stack *stack = NULL;
-    t_stack *current = NULL;
-    char **str = NULL;
+// int main(int argc, char **argv)
+// {
+//     t_stack *stack = NULL;
+//     t_stack *current = NULL;
+//     char **str = NULL;
     
-    str = spliting_nums(argv + 1);
-    // int i = 0;
+//     str = spliting_nums(argv + 1);
+//     // int i = 0;
+//     if (argc <= 2)
+//     {
+//         free_strs(str);
+//         return (0);
+//     }
+//     else if((nill_check(argv + 1) == 1) || (checker(str) == 1))
+//     {
+//         ft_printf("ERROR\n");
+//         free_strs(str);
+//         exit(1);
+//     }
+//     else
+//     {
+//         stack = stack_fill(str);
+// 		if (!stack)
+// 		{
+//     	ft_printf("ERROR\n");
+//     	free_strs(str);
+//     	exit(1);
+// 		}
+//         current = stack;
+//         while (current)
+//         {
+//             ft_printf("index = %d\n", current -> index);
+//             current = current -> next;
+//         }
+//         ft_printf("\n\n\n\n");		
+//         ft_listclear(&stack);
+//         stack = stack_fill(str);
+//         current = stack;
+//         while (current)
+//         {
+//             ft_printf("content = %d\n", current -> content);
+//             current = current -> next;
+//         }
+//         ft_listclear(&stack);
+//     }
+//     free_strs(str);
+//     return (0);
+// }
+
+int main(int argc, char *argv[])
+{
+    t_stack *a = NULL;
+    t_stack *b = NULL;
+    t_stack *current = NULL;
+    char **str = spliting_nums(argv + 1);
+
     if (argc <= 2)
     {
         free_strs(str);
-        return (0);
+        exit(1);
     }
-    else if((nill_check(argv + 1) == 1) || (checker(str) == 1))
+    else if (nill_check(argv + 1) == 1 || checker(str) == 1)
     {
-        ft_printf("ERROR\n");
+        ft_printf("Error\n");
         free_strs(str);
         exit(1);
     }
     else
     {
-        stack = stack_fill(str);
-		if (!stack)
-		{
-    	ft_printf("ERROR\n");
-    	free_strs(str);
-    	exit(1);
-		}
-        current = stack;
+        a = stack_fill(str);
+        if (!a)
+        {
+            ft_printf("Error\n");
+            free_strs(str);
+            exit(1);
+        }
+        b = NULL;
+        current = a;
         while (current)
         {
-            ft_printf("index = %d\n", current -> index);
+            ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
             current = current -> next;
         }
-        ft_printf("\n\n\n\n");		
-        ft_listclear(&stack);
-        stack = stack_fill(str);
-        current = stack;
+        ft_reverse_rotate(&a);
+        ft_printf("\n\n\n\n");
+        ft_printf("\n\nAfter rev-rotating\n\n\n\n\n");
+        current = a;
         while (current)
         {
-            ft_printf("content = %d\n", current -> content);
+            ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
             current = current -> next;
         }
-        ft_listclear(&stack);
+        ft_listclear(&a);
     }
     free_strs(str);
     return (0);

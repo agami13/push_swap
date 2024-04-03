@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 04:37:34 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 06:54:10 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	nill_check(char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (ft_strlen(av[i]) == 0)
+		if (!(av[i][0]))
 			return (1);
 		i++;
 	}
