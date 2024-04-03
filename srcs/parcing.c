@@ -6,11 +6,11 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 03:58:20 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:37:34 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	dup_check2(int *array, int len)
 {

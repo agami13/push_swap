@@ -10,7 +10,7 @@ CC		=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -g
 
-LIB_PATH =	libft/
+LIB_PATH =	../libft/
 
 all: $(NAME)
 

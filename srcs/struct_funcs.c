@@ -6,11 +6,11 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 08:49:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 04:21:36 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:37:45 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_listdelone(t_stack *list)
 {
