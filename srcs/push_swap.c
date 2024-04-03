@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 08:33:10 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 10:08:26 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@
 int main(int argc, char *argv[])
 {
     t_stack *a = NULL;
-    t_stack *b = NULL;
+    // t_stack *b = NULL;
     t_stack *tmp = NULL;
     char **str = spliting_nums(argv + 1);
 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
         free_strs(str);
         exit(1);
     }
-    else if (nill_check(argv + 1) == 1 || checker(str) == 1)
+    else if (nill_check(argv + 1) == 1 || checker(str) == 1 || is_sorted(str) == 1)
     {
         ft_printf("Error\n");
         free_strs(str);
@@ -163,16 +163,8 @@ int main(int argc, char *argv[])
             ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
             tmp = tmp->next;
         }
-        pb(&a, &b);
-        pb(&a, &b);
-        pb(&a, &b);
-        tmp = b;
-        ft_printf("stack b\n");
-        while (tmp)
-        {
-            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
-            tmp = tmp->next;
-        }
+        sort_5(&a);
+        ft_printf("\n\n\n\n\n");
         tmp = a;
         ft_printf("stack a\n");
         while (tmp)
@@ -181,7 +173,6 @@ int main(int argc, char *argv[])
             tmp = tmp->next;
         }
         ft_listclear(&a);
-        ft_listclear(&b);
     }
     free_strs(str);
     return (0);

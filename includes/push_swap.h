@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 08:25:31 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 10:08:17 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ int				ft_push(t_stack **stack1, t_stack **stack2);
 int				ft_rotate(t_stack **stack);
 int				ft_reverse_rotate(t_stack **stack);
 
+// small sort functions
+int				sort_2(t_stack **stack_a);
+int				sort_3(t_stack **stack_a);
+int				sort_4(t_stack **stack_a);
+int				sort_5(t_stack **stack_a);
+void			small_sort(t_stack **stack_a, int size);
 // rules
 void 			sa(t_stack **stack_a);
 void 			sb(t_stack **stack_b);
@@ -52,6 +58,7 @@ char			**spliting_nums(char **av);
 char			**free_strs(char **strs);
 int				ft_numlen(char **str);
 char			*split_helper(char *str, char **av);
+int				stack_sorted(t_stack **stack, int size);
 
 // checker structure
 int				checker(char **av);
@@ -60,6 +67,7 @@ int				checker3(char **av);
 int				dup_check(char **av);
 int				nill_check(char **av);
 int				dup_check2(int *array, int len);
+int				is_sorted(char **str);
 
 // node functions
 void			add_node_to_list(t_stack **list, t_stack *stack, int index);
