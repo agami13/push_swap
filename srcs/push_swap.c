@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 06:25:23 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 08:33:10 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 {
     t_stack *a = NULL;
     t_stack *b = NULL;
-    t_stack *current = NULL;
+    t_stack *tmp = NULL;
     char **str = spliting_nums(argv + 1);
 
     if (argc <= 2)
@@ -116,29 +116,72 @@ int main(int argc, char *argv[])
     else
     {
         a = stack_fill(str);
+        // b = stack_fill(str);
         if (!a)
         {
             ft_printf("Error\n");
             free_strs(str);
             exit(1);
         }
-        b = NULL;
-        current = a;
-        while (current)
+        // current = a;
+        // current2 = b;
+        // ft_push(&a, &b);
+        // while (current && current2)
+        // {
+        //     ft_printf("stack a [%d] = %d\t\t\t\t", current -> index, current -> content);
+        //     ft_printf("stack b [%d] = %d\n", current2 -> index, current2 -> content);
+        //     current = current -> next;
+        //     current2 = current2 -> next;
+        // }
+        // b = NULL;
+        // current = a;
+        // while (current)
+        // {
+        //     ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
+        //     current = current -> next;
+        // }
+        // ft_printf("\n\n\n\n\n");
+        // b = stack_fill(pb(&a, &b));
+        // ft_printf("\n\n\n\n");
+        // current = a;
+        // while (current)
+        // {
+        //     ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
+        //     current = current -> next;
+        // }
+        // ft_printf("\n\n\n\n\n");
+        // t_stack *current2 = b;
+        // while (current2)
+        // {
+        //     ft_printf("stack b [%d] = %d\n",current2 -> index, current2 -> content);
+        //     current2 = current2 -> next;
+        // }
+        tmp = a;
+        ft_printf("stack a\n");
+        while (tmp)
         {
-            ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
-            current = current -> next;
+            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+            tmp = tmp->next;
         }
-        ft_reverse_rotate(&a);
-        ft_printf("\n\n\n\n");
-        ft_printf("\n\nAfter rev-rotating\n\n\n\n\n");
-        current = a;
-        while (current)
+        pb(&a, &b);
+        pb(&a, &b);
+        pb(&a, &b);
+        tmp = b;
+        ft_printf("stack b\n");
+        while (tmp)
         {
-            ft_printf("stack a [%d] = %d\n",current -> index, current -> content);
-            current = current -> next;
+            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+            tmp = tmp->next;
+        }
+        tmp = a;
+        ft_printf("stack a\n");
+        while (tmp)
+        {
+            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+            tmp = tmp->next;
         }
         ft_listclear(&a);
+        ft_listclear(&b);
     }
     free_strs(str);
     return (0);

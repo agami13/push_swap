@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 07:08:06 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 08:25:31 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct n_list
 }					t_stack;
 
 // instructions
-void			ft_swap(t_stack **stack);
-void			ft_push(t_stack **stack1, t_stack **stack2);
-void			ft_rotate(t_stack **stack);
-void			ft_reverse_rotate(t_stack **stack);
+int				ft_swap(t_stack **stack);
+int				ft_push(t_stack **stack1, t_stack **stack2);
+int				ft_rotate(t_stack **stack);
+int				ft_reverse_rotate(t_stack **stack);
 
 // rules
 void 			sa(t_stack **stack_a);
