@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 08:17:29 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:50:25 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int	dup_check(char **av)
 
 	i = 0;
 	len = ft_numlen(av);
-	array = (int *)malloc(sizeof(int) * len + 1);
+	array = (int *)malloc(sizeof(int) * len);
 	if (!array)
 		return (1);
-	while (av[i])
+	while (i < len)
 	{
 		array[i] = ft_atol(av[i]);
 		i++;

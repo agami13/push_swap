@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:49:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/02 08:49:17 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 01:10:42 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ char	**free_strs(char **strs)
 
 int	ft_numlen(char **str)
 {
-	int	i;
+	int i = 0;
 
-	i = 0;
-	while (ft_split(str[i], ' '))
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -71,6 +70,7 @@ char	**spliting_nums(char **av)
 	int			j;
 	char		**array;
 	char		*str;
+	char		**result;
 	char		*temp;
 
 	i = 0;
@@ -82,6 +82,7 @@ char	**spliting_nums(char **av)
 		while (array[j])
 		{
 			temp = ft_strjoin(str, array[j]);
+			free(str);
 			str = temp;
 			temp = ft_strjoin(str, " ");
 			free(str);
@@ -91,5 +92,7 @@ char	**spliting_nums(char **av)
 		free_strs(array);
 		i++;
 	}
-	return (ft_split(str, ' '));
+	result = ft_split(str, ' ');
+	free(str);
+	return (result);
 }
