@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:49:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 01:10:42 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:22:10 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@ char	**free_strs(char **strs)
 
 int	ft_numlen(char **str)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
 
-long	ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	long long	index;
 	long long	results;
@@ -64,31 +65,38 @@ long	ft_atol(const char *str)
 	return (results * sign);
 }
 
+char	*split_helper(char *str, char **av)
+{
+	int		i;
+	char	*temp;
+
+	i = 0;
+	while (av[i])
+	{
+		temp = ft_strjoin(str, av[i]);
+		free(str);
+		str = temp;
+		temp = ft_strjoin(str, " ");
+		free(str);
+		str = temp;
+		i++;
+	}
+	return (str);
+}
+
 char	**spliting_nums(char **av)
 {
 	int			i;
-	int			j;
 	char		**array;
 	char		*str;
 	char		**result;
-	char		*temp;
 
 	i = 0;
 	str = ft_strdup("");
 	while (av[i])
 	{
 		array = ft_split(av[i], ' ');
-		j = 0;
-		while (array[j])
-		{
-			temp = ft_strjoin(str, array[j]);
-			free(str);
-			str = temp;
-			temp = ft_strjoin(str, " ");
-			free(str);
-			str = temp;
-			j++;
-		}
+		str = split_helper(str, array);
 		free_strs(array);
 		i++;
 	}
