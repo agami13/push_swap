@@ -6,20 +6,11 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 08:48:15 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 10:15:33 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:27:29 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	small_sort(t_stack **stack_a, int size)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-}
 
 int	sort_2(t_stack **stack_a)
 {
@@ -28,20 +19,52 @@ int	sort_2(t_stack **stack_a)
 	return (0);
 }
 
-int	sort_3(t_stack **stack_a)
+int	sort_3(t_stack **a)
 {
-	small_sort(stack_a, 3);
-	return (0);
+	if (stack_sorted(a) == 1)
+		return (0);
+	if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content)
+	{
+		ra(a);
+		if ((*a)->content > (*a)->next->content)
+			sa(a);
+	}
+	else if ((*a)->content > (*a)->next->content && (*a)->content < (*a)->next->next->content)
+		sa(a);
+	else if ((*a)->content < (*a)->next->content && (*a)->content > (*a)->next->next->content)
+		rra(a);
+	else if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content)
+	{
+		rra(a);
+		if ((*a)->content > (*a)->next->content)
+			sa(a);
+	}
+	return (1);
 }
 
-int	sort_4(t_stack **stack_a)
+int	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-	small_sort(stack_a, 4);
-	return (0);
+	if (stack_sorted(stack_a) == 1)
+		return (0);
+	if (push_min_to_b(stack_a, stack_b) == 1)
+		return (0);
+	sort_3(stack_a);
+	pa(stack_a, stack_b);
+	if (update_index(stack_a) == 1)
+		return (0);
+	return (1);
 }
 
-int sort_5(t_stack **stack_a)
+int	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	small_sort(stack_a, 5);
-	return (0);
+	if (stack_sorted(stack_a) == 1)
+		return (0);
+	if (push_min_to_b(stack_a, stack_b) == 1)
+		return (0);
+	update_index(stack_a);
+	sort_4(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	if (update_index(stack_a) == 1)
+		return (0);
+	return (1);
 }

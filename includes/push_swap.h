@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 10:08:17 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:15:04 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,15 @@ int				ft_reverse_rotate(t_stack **stack);
 
 // small sort functions
 int				sort_2(t_stack **stack_a);
-int				sort_3(t_stack **stack_a);
-int				sort_4(t_stack **stack_a);
-int				sort_5(t_stack **stack_a);
-void			small_sort(t_stack **stack_a, int size);
+int				sort_3(t_stack **a);
+int				sort_4(t_stack **stack_a,t_stack **stack_b);
+int				sort_5(t_stack **stack_a, t_stack **stack_b);
+
+int				update_index(t_stack **stack);
+int				find_min_index(t_stack **stack);
+int				push_min_to_b(t_stack **a, t_stack **b);
+int				push_min_to_b_5(t_stack **a, t_stack **b);
+
 // rules
 void 			sa(t_stack **stack_a);
 void 			sb(t_stack **stack_b);
@@ -58,7 +63,8 @@ char			**spliting_nums(char **av);
 char			**free_strs(char **strs);
 int				ft_numlen(char **str);
 char			*split_helper(char *str, char **av);
-int				stack_sorted(t_stack **stack, int size);
+int				stack_sorted(t_stack **stack);
+int				list_size(t_stack *stack);
 
 // checker structure
 int				checker(char **av);

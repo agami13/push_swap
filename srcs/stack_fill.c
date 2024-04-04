@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:54:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/03 04:37:40 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:08:03 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ t_stack	*stack_fill(char **argv)
 	t_stack	*stack;
 	t_stack	*head;
 
-	i = 0;
+	i = ft_numlen(argv) - 1;
 	stack = NULL;
 	head = NULL;
-	while (i < ft_numlen(argv))
+	while (i >= 0)
 	{
 		stack = create_node(ft_atoi(argv[i]));
 		if (!stack)
@@ -51,7 +51,7 @@ t_stack	*stack_fill(char **argv)
 			return (NULL);
 		}
 		add_node_to_list(&head, stack, i);
-		i++;
+		i--;
 	}
 	return (head);
 }

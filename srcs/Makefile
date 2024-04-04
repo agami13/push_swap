@@ -3,7 +3,7 @@ NAME	=	push_swap
 LIB		=	libft.a
 
 SRCS	=	push_swap.c parcing.c stack_fill.c helper_funcs.c struct_funcs.c \
-			instructions.c rules.c rules2.c utils.c small_sort.c \
+			instructions.c rules.c rules2.c utils.c small_sort.c utils2.c \
 
 OBJ		=	$(SRCS:.c=.o)
 
