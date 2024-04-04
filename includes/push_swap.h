@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 14:15:04 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:35:24 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				dup_check(char **av);
 int				nill_check(char **av);
 int				dup_check2(int *array, int len);
 int				is_sorted(char **str);
-
+int				empty_space_check(char **str);
 // node functions
 void			add_node_to_list(t_stack **list, t_stack *stack, int index);
 t_stack			*stack_fill(char **argv);

@@ -6,11 +6,31 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:16:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 14:14:21 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:35:06 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	empty_space_check(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (str[i][j] == ' ')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	list_size(t_stack *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 14:15:28 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:37:01 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
         free_strs(str);
         exit(1);
     }
-    else if (nill_check(argv + 1) == 1 || checker(str) == 1 || is_sorted(str) == 1)
+    else if (nill_check(argv + 1) == 1 || checker(str) == 1 || is_sorted(str) == 1 || (empty_space_check(argv + 1)) == 1)
     {
         ft_printf("Error\n");
         free_strs(str);
