@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 14:37:01 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:16:08 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,55 @@ int main(int argc, char *argv[])
 
     if (argc <= 2)
     {
-        free_strs(str);
-        exit(1);
+        a = stack_fill(str);
+        if (!a)
+        {
+            ft_printf("Error\n");
+            free_strs(str);
+            exit(1);
+        }
+        // tmp = a;
+        // t_stack *tmp2 = b;
+        // ft_printf("stack a\n");
+        // while (tmp)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+        //     tmp = tmp->next;
+        // }
+        // ft_printf("stack b\n");
+        // while (tmp2)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
+        //     tmp2 = tmp2->next;
+        // }
+        // ft_printf("\n\n\n\n\n");
+        // if (stack_sorted(&a) == 1)
+        //     ft_printf("stack a is sorted\n\n\n");
+        // else
+        //     ft_printf("stack a is not sorted\n\n\n");
+        sort_5(&a, &b);
+        // if (stack_sorted(&a) == 1)
+        //     ft_printf("stack a is sorted\n\n\n");
+        // else
+        //     ft_printf("stack a is not sorted\n\n\n");
+        // ft_printf("\n\n\n\n\n");
+        // tmp = a;
+        // tmp2 = b;
+        // ft_printf("stack a\n");
+        // while (tmp)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+        //     tmp = tmp->next;
+        // }
+        // ft_printf("stack b\n");
+        // while (tmp2)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
+        //     tmp2 = tmp2->next;
+        // }
+        ft_listclear(&a);
+        ft_listclear(&b);
+        return (0);
     }
     else if (nill_check(argv + 1) == 1 || checker(str) == 1 || is_sorted(str) == 1 || (empty_space_check(argv + 1)) == 1)
     {

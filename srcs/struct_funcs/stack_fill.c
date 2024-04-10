@@ -6,11 +6,11 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:54:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 12:08:03 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:33:45 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*create_node(int content)
 {

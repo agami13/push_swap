@@ -6,11 +6,11 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 08:48:15 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/04 14:27:29 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:33:38 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	sort_2(t_stack **stack_a)
 {
@@ -57,9 +57,7 @@ int	sort_4(t_stack **stack_a, t_stack **stack_b)
 
 int	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	if (stack_sorted(stack_a) == 1)
-		return (0);
-	if (push_min_to_b(stack_a, stack_b) == 1)
+	if (push_min_to_b_5(stack_a, stack_b) == 1)
 		return (0);
 	update_index(stack_a);
 	sort_4(stack_a, stack_b);

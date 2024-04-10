@@ -2,8 +2,18 @@ NAME	=	push_swap
 
 LIB		=	libft.a
 
-SRCS	=	push_swap.c parcing.c stack_fill.c helper_funcs.c struct_funcs.c \
-			instructions.c rules.c rules2.c utils.c small_sort.c utils2.c \
+SRCS	=	srcs/push_swap.c \
+			srcs/parcing/parcing.c \
+			srcs/struct_funcs/stack_fill.c \
+			srcs/parcing/helper_funcs.c \
+			srcs/struct_funcs/struct_funcs.c \
+			srcs/rules/instructions.c \
+			srcs/rules/rules.c \
+			srcs/rules/rules2.c \
+			srcs/utils/utils.c \
+			srcs/sort_funcs/small_sort.c \
+			srcs/sort_funcs/big_sort.c \
+			srcs/utils/utils2.c \
 
 OBJ		=	$(SRCS:.c=.o)
 
@@ -11,7 +21,7 @@ CC		=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -g
 
-LIB_PATH =	../libft/
+LIB_PATH =	libft/
 
 all: $(NAME)
 
