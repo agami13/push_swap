@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:16:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:34:14 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:06:54 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	empty_space_check(char **str)
 	return (0);
 }
 
-int	list_size(t_stack *stack)
+int	list_size(t_stack **stack)
 {
 	int		i;
 	t_stack	*temp;
 
 	i = 0;
-	temp = stack;
+	temp = *stack;
 	while (temp)
 	{
 		i++;
@@ -70,4 +70,42 @@ int	push_min_to_b_5(t_stack **a, t_stack **b)
 		rra(a);
 	pb(a, b);
 	return (0);
+}
+
+int	*bubble_sort(t_stack *a)
+{
+	int	*tosort;
+	int	step;
+	int	i;
+	int	tmp;
+	int	stacklen;
+
+	stacklen = stack_len(a);
+	intialvar(&tosort, &step, &i, a);
+	while (step < stacklen - 2)
+	{
+		i = 0;
+		while (i < stacklen - step - 2)
+		{
+			if (tosort[i] > tosort[i + 1])
+			{
+				tmp = tosort[i];
+				tosort[i] = tosort[i + 1];
+				tosort[i + 1] = tmp;
+			}
+			i++;
+		}
+		step++;
+	}
+	return (tosort);
+}
+
+int	calculate_chunks(t_stack *a)
+{
+	int	len = stack_len(a);
+	
+	if (len <= 100)
+		return (len / 4);
+	else
+		return (len / 8);
 }

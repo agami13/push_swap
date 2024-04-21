@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:16:08 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:06:04 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,7 @@ int main(int argc, char *argv[])
             ft_printf("stack a is sorted\n\n\n");
         else
             ft_printf("stack a is not sorted\n\n\n");
-        sort_5(&a, &b);
+        sort_chunks(&a, &b);
         if (stack_sorted(&a) == 1)
             ft_printf("stack a is sorted\n\n\n");
         else
