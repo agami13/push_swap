@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 16:28:11 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:46:17 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,12 @@ int				push_min_to_b_5(t_stack **a, t_stack **b);
 
 // big sort functions
 void			sort(t_stack **a, t_stack **b);
-int				*bubble_sort(t_stack *a);
+void			push_to_b(t_stack **a, t_stack **b);
+void			give_value(int *step, int *i);
+int				*bubble_sort(t_stack **stack);
 int				*covert_to_arr(t_stack **a, int size);
-
+void			sort_helper(int *i, int *range, t_stack **b, int size);
+void			sort_helper2(int *i, int *range, t_stack **b, int size);
 // rules
 void 			sa(t_stack **stack_a);
 void 			sb(t_stack **stack_b);

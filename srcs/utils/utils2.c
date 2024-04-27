@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:16:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 16:24:51 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:22:32 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,30 +76,37 @@ int	push_min_to_b_5(t_stack **a, t_stack **b)
 	return (0);
 }
 
-// int	*bubble_sort(t_stack *a)
-// {
-// 	int	*tosort;
-// 	int	step;
-// 	int	i;
-// 	int	tmp;
-// 	int	stacklen;
+void	give_value(int *step, int *i)
+{
+	*step = 0;
+	*i = 0;
+}
 
-// 	stacklen = stack_len(a);
-// 	intialvar(&tosort, &step, &i, a);
-// 	while (step < stacklen - 2)
-// 	{
-// 		i = 0;
-// 		while (i < stacklen - step - 2)
-// 		{
-// 			if (tosort[i] > tosort[i + 1])
-// 			{
-// 				tmp = tosort[i];
-// 				tosort[i] = tosort[i + 1];
-// 				tosort[i + 1] = tmp;
-// 			}
-// 			i++;
-// 		}
-// 		step++;
-// 	}
-// 	return (tosort);
-// }
+int	*bubble_sort(t_stack **stack)
+{
+	int	*sorted;
+	int	step;
+	int	i;
+	int	tmp;
+	int	len;
+
+	len = list_size(stack);
+	sorted = covert_to_arr(stack, list_size(stack));
+	give_value(&step, &i);
+	while (step < len - 1)
+	{
+		i = 0;
+		while (i < len - step - 1)
+		{
+			if (sorted[i] > sorted[i + 1])
+			{
+				tmp = sorted[i];
+				sorted[i] = sorted[i + 1];
+				sorted[i + 1] = tmp;
+			}
+			i++;
+		}
+		step++;
+	}
+	return (sorted);
+}

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 16:26:14 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:12:20 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,9 @@ int main(int argc, char *argv[])
 {
     t_stack *a = NULL;
     t_stack *b = NULL;
-    t_stack *tmp = NULL;
+    // t_stack *tmp = NULL;
     char **str = spliting_nums(argv + 1);
 
-    for (int i = 0; str[i]; i++)
-        ft_printf("str[%d] = %s\n", i, str[i]);
     if (argc <= 2)
     {
         a = stack_fill(str);
@@ -205,45 +203,45 @@ int main(int argc, char *argv[])
         //     ft_printf("stack b [%d] = %d\n",current2 -> index, current2 -> content);
         //     current2 = current2 -> next;
         // }
-        tmp = a;
-        t_stack *tmp2 = b;
-        ft_printf("stack a\n");
-        while (tmp)
-        {
-            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
-            tmp = tmp->next;
-        }
-        ft_printf("stack b\n");
-        while (tmp2)
-        {
-            ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
-            tmp2 = tmp2->next;
-        }
-        ft_printf("\n\n\n\n\n");
-        if (stack_sorted(&a) == 1)
-            ft_printf("stack a is sorted\n\n\n");
-        else
-            ft_printf("stack a is not sorted\n\n\n");
-        sort_5(&a, &b);
-        if (stack_sorted(&a) == 1)
-            ft_printf("stack a is sorted\n\n\n");
-        else
-            ft_printf("stack a is not sorted\n\n\n");
-        ft_printf("\n\n\n\n\n");
-        tmp = a;
-        tmp2 = b;
-        ft_printf("stack a\n");
-        while (tmp)
-        {
-            ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
-            tmp = tmp->next;
-        }
-        ft_printf("stack b\n");
-        while (tmp2)
-        {
-            ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
-            tmp2 = tmp2->next;
-        }
+        // tmp = a;
+        // t_stack *tmp2 = b;
+        // ft_printf("stack a\n");
+        // while (tmp)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+        //     tmp = tmp->next;
+        // }
+        // ft_printf("stack b\n");
+        // while (tmp2)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
+        //     tmp2 = tmp2->next;
+        // }
+        // ft_printf("\n\n\n\n\n");
+        // if (stack_sorted(&a) == 1)
+        //     ft_printf("stack a is sorted\n\n\n");
+        // else
+        //     ft_printf("stack a is not sorted\n\n\n");
+        push_to_b(&a, &b);
+        // if (stack_sorted(&a) == 1)
+        //     ft_printf("stack a is sorted\n\n\n");
+        // else
+        //     ft_printf("stack a is not sorted\n\n\n");
+        // ft_printf("\n\n\n\n\n");
+        // tmp = a;
+        // tmp2 = b;
+        // ft_printf("stack a\n");
+        // while (tmp)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp->index, tmp->content);
+        //     tmp = tmp->next;
+        // }
+        // ft_printf("stack b\n");
+        // while (tmp2)
+        // {
+        //     ft_printf("index: %d, content: %d\n", tmp2->index, tmp2->content);
+        //     tmp2 = tmp2->next;
+        // }
         ft_listclear(&a);
         ft_listclear(&b);
     }
