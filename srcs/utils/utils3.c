@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:28:51 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 20:00:04 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:12:02 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 t_stack	*find_biggest(t_stack *a)
 {
-	t_stack	*nextn;
+	t_stack	*next;
 	t_stack	*max;
 
 	max = a;
 	while (a->next != NULL)
 	{
-		nextn = a->next;
-		if (nextn != NULL && nextn->content > max->content)
+		next = a->next;
+		if (next != NULL && next->content > max->content)
 		{
-			max = nextn;
+			max = next;
 		}
-		a = nextn;
+		a = next;
 	}
 	return (max);
 }

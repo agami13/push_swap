@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:33:31 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 19:56:22 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:24:18 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,40 @@ void	push_to_b(t_stack **a, t_stack **b)
 	free(arr);
 }
 
-// void	push_to_a(t_stack **a, t_stack **b)
-// {
+void	push_to_a(t_stack **a, t_stack **b, int size, int *arr)
+{
+	int		distance;
+	int		i;
+	t_stack	*temp;
 
-// }
+	temp = find_biggest(*b);
+	distance = temp->content;
+	i = 0;
+	while (temp->content != distance)
+	{
+		i++;
+		temp = temp->next;
+	}
+	if (i < size / 2)
+	{
+		while (i > 0)
+		{
+			if (arr[size] < (*b)->next->content)
+			{
+				sb(b);
+				break ;
+			}
+			rb(b);
+			distance--;
+		}
+		
+	}
+	else
+	{
+		while (i < size)
+		{
+			rrb(b);
+			i++;
+		}
+	}
+}

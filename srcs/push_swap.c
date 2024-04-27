@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 18:12:20 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:18:15 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,9 @@ int main(int argc, char *argv[])
         // else
         //     ft_printf("stack a is not sorted\n\n\n");
         push_to_b(&a, &b);
+        t_stack *tmp5 = find_biggest(b);
+        ft_printf("biggest = %d\n", tmp5->content);
+        // push_to_a(&a, &b);
         // if (stack_sorted(&a) == 1)
         //     ft_printf("stack a is sorted\n\n\n");
         // else

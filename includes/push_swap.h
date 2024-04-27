@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 18:46:17 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:28:28 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ typedef struct s_chunk
 	int				*array;
 }					t_chunk;
 
+// sort
+void			sort(t_stack **a, t_stack **b);
+
 // instructions
 int				ft_swap(t_stack **stack);
 int				ft_push(t_stack **stack1, t_stack **stack2);
@@ -42,7 +45,6 @@ int				sort_2(t_stack **stack_a);
 int				sort_3(t_stack **a);
 int				sort_4(t_stack **stack_a,t_stack **stack_b);
 int				sort_5(t_stack **stack_a, t_stack **stack_b);
-
 int				update_index(t_stack **stack);
 int				find_min_index(t_stack **stack);
 int				push_min_to_b(t_stack **a, t_stack **b);
@@ -51,11 +53,13 @@ int				push_min_to_b_5(t_stack **a, t_stack **b);
 // big sort functions
 void			sort(t_stack **a, t_stack **b);
 void			push_to_b(t_stack **a, t_stack **b);
-void			give_value(int *step, int *i);
-int				*bubble_sort(t_stack **stack);
-int				*covert_to_arr(t_stack **a, int size);
+void			push_to_a(t_stack **a, t_stack **b);
+// void			give_value(int *step, int *i);
 void			sort_helper(int *i, int *range, t_stack **b, int size);
 void			sort_helper2(int *i, int *range, t_stack **b, int size);
+int				*bubble_sort(t_stack **stack);
+int				*covert_to_arr(t_stack **a, int size);
+
 // rules
 void 			sa(t_stack **stack_a);
 void 			sb(t_stack **stack_b);
