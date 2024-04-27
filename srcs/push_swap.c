@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:30 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/18 16:06:04 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:26:14 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ int main(int argc, char *argv[])
     t_stack *tmp = NULL;
     char **str = spliting_nums(argv + 1);
 
+    for (int i = 0; str[i]; i++)
+        ft_printf("str[%d] = %s\n", i, str[i]);
     if (argc <= 2)
     {
         a = stack_fill(str);
@@ -222,7 +224,7 @@ int main(int argc, char *argv[])
             ft_printf("stack a is sorted\n\n\n");
         else
             ft_printf("stack a is not sorted\n\n\n");
-        sort_chunks(&a, &b);
+        sort_5(&a, &b);
         if (stack_sorted(&a) == 1)
             ft_printf("stack a is sorted\n\n\n");
         else

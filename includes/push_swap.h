@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/21 01:06:06 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:28:11 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,8 @@ int				push_min_to_b_5(t_stack **a, t_stack **b);
 
 // big sort functions
 void			sort(t_stack **a, t_stack **b);
-void			push_min(t_stack **a, t_stack **b, int i);
 int				*bubble_sort(t_stack *a);
-void			sort_chunks(t_stack **a, t_stack **b);
-void			increment_t_chunk(t_chunk *nsort, int size);
-void   			push_to_b(t_stack **a, t_stack **b, int *arr, int size);
-void			push_to_a(t_stack **a, t_stack **b);
-void			b_index(t_stack *b);
 int				*covert_to_arr(t_stack **a, int size);
-int				calculate_chunks(t_stack *a);
-void			declare(int *size, t_chunk **nsort, t_stack **a);
-void			b_index(t_stack *b);
-int				stack_len(t_stack *a);
-void			intialvar(int **tosort, int *step, int *i, t_stack *a);
 
 // rules
 void 			sa(t_stack **stack_a);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:16:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/21 01:06:54 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:24:51 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 int	empty_space_check(char **str)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
+		k = 0;
 		while (str[i][j])
 		{
 			if (str[i][j] == ' ')
-				return (1);
+				k++;
 			j++;
 		}
+		if (k == j)
+			return (1);
 		i++;
 	}
 	return (0);
@@ -72,40 +76,30 @@ int	push_min_to_b_5(t_stack **a, t_stack **b)
 	return (0);
 }
 
-int	*bubble_sort(t_stack *a)
-{
-	int	*tosort;
-	int	step;
-	int	i;
-	int	tmp;
-	int	stacklen;
+// int	*bubble_sort(t_stack *a)
+// {
+// 	int	*tosort;
+// 	int	step;
+// 	int	i;
+// 	int	tmp;
+// 	int	stacklen;
 
-	stacklen = stack_len(a);
-	intialvar(&tosort, &step, &i, a);
-	while (step < stacklen - 2)
-	{
-		i = 0;
-		while (i < stacklen - step - 2)
-		{
-			if (tosort[i] > tosort[i + 1])
-			{
-				tmp = tosort[i];
-				tosort[i] = tosort[i + 1];
-				tosort[i + 1] = tmp;
-			}
-			i++;
-		}
-		step++;
-	}
-	return (tosort);
-}
-
-int	calculate_chunks(t_stack *a)
-{
-	int	len = stack_len(a);
-	
-	if (len <= 100)
-		return (len / 4);
-	else
-		return (len / 8);
-}
+// 	stacklen = stack_len(a);
+// 	intialvar(&tosort, &step, &i, a);
+// 	while (step < stacklen - 2)
+// 	{
+// 		i = 0;
+// 		while (i < stacklen - step - 2)
+// 		{
+// 			if (tosort[i] > tosort[i + 1])
+// 			{
+// 				tmp = tosort[i];
+// 				tosort[i] = tosort[i + 1];
+// 				tosort[i + 1] = tmp;
+// 			}
+// 			i++;
+// 		}
+// 		step++;
+// 	}
+// 	return (tosort);
+// }
