@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 21:28:28 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:13:00 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_chunk
 }					t_chunk;
 
 // sort
-void			sort(t_stack **a, t_stack **b);
+int				sort(t_stack **a, t_stack **b);
 
 // instructions
 int				ft_swap(t_stack **stack);
@@ -51,9 +51,9 @@ int				push_min_to_b(t_stack **a, t_stack **b);
 int				push_min_to_b_5(t_stack **a, t_stack **b);
 
 // big sort functions
-void			sort(t_stack **a, t_stack **b);
-void			push_to_b(t_stack **a, t_stack **b);
-void			push_to_a(t_stack **a, t_stack **b);
+void			push_biggest_to_top(t_stack **b, int size, int *arr);
+void			sort_stack(t_stack **a, t_stack **b);
+void			push_to_a(t_stack **a, t_stack **b, int *arr, int size);
 // void			give_value(int *step, int *i);
 void			sort_helper(int *i, int *range, t_stack **b, int size);
 void			sort_helper2(int *i, int *range, t_stack **b, int size);

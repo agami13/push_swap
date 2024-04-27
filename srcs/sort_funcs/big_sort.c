@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:33:31 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 21:24:18 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:23:20 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_helper2(int *i, int *range, t_stack **b, int size)
 		*range += 1;
 }
 
-void	push_to_b(t_stack **a, t_stack **b)
+void	sort_stack(t_stack **a, t_stack **b)
 {
 	int		*arr;
 	int		i;
@@ -75,43 +75,22 @@ void	push_to_b(t_stack **a, t_stack **b)
 		else
 			ra(a);
 	}
-	free(arr);
+	push_to_a(a, b, arr, size - 1);
 }
 
-void	push_to_a(t_stack **a, t_stack **b, int size, int *arr)
+void			push_to_a(t_stack **a, t_stack **b, int *arr, int size)
 {
-	int		distance;
-	int		i;
-	t_stack	*temp;
-
-	temp = find_biggest(*b);
-	distance = temp->content;
-	i = 0;
-	while (temp->content != distance)
+	while ((*b))
 	{
-		i++;
-		temp = temp->next;
-	}
-	if (i < size / 2)
-	{
-		while (i > 0)
+		if ((*b)->content == arr[size])
 		{
-			if (arr[size] < (*b)->next->content)
-			{
-				sb(b);
-				break ;
-			}
-			rb(b);
-			distance--;
+			pa(a, b);
+			size--;
 		}
-		
+		else if ((*b)-> next && (*b)->next->content == arr[size])
+			sb(b);
+		else
+			push_biggest_to_top(b, size, arr);
 	}
-	else
-	{
-		while (i < size)
-		{
-			rrb(b);
-			i++;
-		}
-	}
+	free(arr);
 }

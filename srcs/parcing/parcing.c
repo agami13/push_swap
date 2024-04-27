@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:33:10 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:55:37 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	checker2(char *av)
 			return (1);
 		else if ((av[i] <= 31) || (av[i] >= 33 && av[i] <= 44)
 			|| (av[i] >= 46 && av[i] <= 47)
-			|| (av[i] >= 58 && av[i] <= 127))
+			|| (av[i] >= 58 && av[i] < 127))
 			return (1);
 		else if ((ft_atol(av) > 2147483647) || (ft_atol(av) < -2147483648))
 			return (1);
