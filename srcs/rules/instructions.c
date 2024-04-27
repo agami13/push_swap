@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 04:53:50 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:33:22 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:59:24 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	ft_push(t_stack **stack1, t_stack **stack2)
 {
 	t_stack	*temp;
 
-    if (!*stack1)
-        return (-1);
-    temp = *stack1;
-    *stack1 = (*stack1)->next;
-    temp->next = *stack2;
-    *stack2 = temp;
-    return (0);
+	if (!*stack1)
+		return (-1);
+	temp = *stack1;
+	*stack1 = (*stack1)->next;
+	temp->next = *stack2;
+	*stack2 = temp;
+	return (0);
 }
 
 int	ft_rotate(t_stack **stack)

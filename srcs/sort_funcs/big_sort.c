@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:33:31 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 18:44:36 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:56:22 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,36 @@ int	get_range(t_stack **a)
 
 void	sort_helper(int *i, int *range, t_stack **b, int size)
 {
-		if (list_size(b) > 1)
-			rb(b);
-		if (*i < *range)
-			*i += 1;
-		if (*range < size - 1)
-			*range += 1;
+	if (list_size(b) > 1)
+		rb(b);
+	if (*i < *range)
+		*i += 1;
+	if (*range < size - 1)
+		*range += 1;
 }
 
 void	sort_helper2(int *i, int *range, t_stack **b, int size)
 {
-		if (list_size(b) > 1 && ((*b)->next->content > (*b)->content))
-			sb(b);
-		if (*i < *range)
-			*i += 1;
-		if (*range < size - 1)
-			*range += 1;
+	if (list_size(b) > 1 && ((*b)->next->content > (*b)->content))
+		sb(b);
+	if (*i < *range)
+		*i += 1;
+	if (*range < size - 1)
+		*range += 1;
 }
 
 void	push_to_b(t_stack **a, t_stack **b)
 {
-	int	*arr;
-	int	i;
-	int	range;
+	int		*arr;
+	int		i;
+	int		range;
 	int		size;
 
 	size = list_size(a);
 	arr = bubble_sort(a);
 	range = get_range(a);
 	i = 0;
-	while((*a))
+	while ((*a))
 	{
 		if ((*a)->content <= arr[i])
 		{
@@ -77,3 +77,8 @@ void	push_to_b(t_stack **a, t_stack **b)
 	}
 	free(arr);
 }
+
+// void	push_to_a(t_stack **a, t_stack **b)
+// {
+
+// }

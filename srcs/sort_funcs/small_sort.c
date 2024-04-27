@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 08:48:15 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:33:38 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:57:26 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,21 @@ int	sort_3(t_stack **a)
 {
 	if (stack_sorted(a) == 1)
 		return (0);
-	if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content)
+	if ((*a)->content > (*a)->next->content
+		&& (*a)->content > (*a)->next->next->content)
 	{
 		ra(a);
 		if ((*a)->content > (*a)->next->content)
 			sa(a);
 	}
-	else if ((*a)->content > (*a)->next->content && (*a)->content < (*a)->next->next->content)
+	else if ((*a)->content > (*a)->next->content
+		&& (*a)->content < (*a)->next->next->content)
 		sa(a);
-	else if ((*a)->content < (*a)->next->content && (*a)->content > (*a)->next->next->content)
+	else if ((*a)->content < (*a)->next->content
+		&& (*a)->content > (*a)->next->next->content)
 		rra(a);
-	else if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content)
+	else if ((*a)->content < (*a)->next->content
+		&& (*a)->content < (*a)->next->next->content)
 	{
 		rra(a);
 		if ((*a)->content > (*a)->next->content)

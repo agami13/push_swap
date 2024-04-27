@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:16:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 18:22:32 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:00:30 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	list_size(t_stack **stack)
 
 int	push_min_to_b_5(t_stack **a, t_stack **b)
 {
-	int min_index;
+	int	min_index;
 
 	if (!(*a))
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:28:51 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/27 16:02:50 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:00:04 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ t_stack	*find_biggest(t_stack *a)
 
 int	*covert_to_arr(t_stack **a, int size)
 {
-	int *arr;
-	int i;
-	t_stack *temp;
+	int		*arr;
+	int		i;
+	t_stack	*temp;
 
 	temp = *a;
 	arr = malloc(sizeof(int) * size);
