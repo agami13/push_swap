@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/28 05:17:13 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/28 05:44:32 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int					list_size(t_stack **stack);
 long long			ft_atol(const char *str);
 
 // checker structure
-void				parsing(char **argv, t_stack **a, char **str);
+void				parsing(t_stack **a, char **str);
 int					checker(char **av);
 int					checker2(char *av);
 int					checker3(char **av);
