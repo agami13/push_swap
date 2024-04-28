@@ -16,6 +16,7 @@ SRCS	=	srcs/push_swap.c \
 			srcs/utils/utils2.c \
 			srcs/utils/utils3.c \
 			srcs/sort_funcs/sort.c \
+			srcs/parcing/parse.c \
 
 OBJ		=	$(SRCS:.c=.o)
 
