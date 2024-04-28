@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:33:31 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/28 00:23:20 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/04/28 05:05:34 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 	push_to_a(a, b, arr, size - 1);
 }
 
-void			push_to_a(t_stack **a, t_stack **b, int *arr, int size)
+void	push_to_a(t_stack **a, t_stack **b, int *arr, int size)
 {
 	while ((*b))
 	{
@@ -90,7 +90,7 @@ void			push_to_a(t_stack **a, t_stack **b, int *arr, int size)
 		else if ((*b)-> next && (*b)->next->content == arr[size])
 			sb(b);
 		else
-			push_biggest_to_top(b, size, arr);
+			push_biggest_to_top(b, arr);
 	}
 	free(arr);
 }
