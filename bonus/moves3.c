@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   moves3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 04:32:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 22:03:51 by ybouaoud         ###   ########.fr       */
+/*   Created: 2024/05/03 16:42:32 by ybouaoud          #+#    #+#             */
+/*   Updated: 2024/05/03 21:24:30 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/checker.h"
 
-void	error(void)
+void	ra(t_stack **stack_a)
 {
-	write(2, "Error\n", ft_strlen("Error\n"));
-	exit(1);
+	ft_rotate(stack_a);
 }
 
-void	parsing(t_stack **a, char **str)
+void	rb(t_stack **stack_b)
 {
-	(*a) = stack_fill(str);
-	if (!a)
-	{
-		free_strs(str);
-		error();
-	}
-	if (is_sorted(str) == 1)
-	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
-	}
-	else if (checker(str) == 1)
-	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
-	}
+	ft_rotate(stack_b);
+}
+
+void	rr(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_rotate(stack_a);
+	ft_rotate(stack_b);
+}
+
+void	rra(t_stack **stack_a)
+{
+	ft_reverse_rotate(stack_a);
+}
+
+void	rrb(t_stack **stack_b)
+{
+	ft_reverse_rotate(stack_b);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   re_parse3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 04:32:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 22:03:51 by ybouaoud         ###   ########.fr       */
+/*   Created: 2024/05/03 16:12:06 by ybouaoud          #+#    #+#             */
+/*   Updated: 2024/05/03 22:08:05 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/checker.h"
 
 void	error(void)
 {
@@ -18,7 +18,7 @@ void	error(void)
 	exit(1);
 }
 
-void	parsing(t_stack **a, char **str)
+int	parsing(t_stack **a, char **str)
 {
 	(*a) = stack_fill(str);
 	if (!a)
@@ -26,16 +26,35 @@ void	parsing(t_stack **a, char **str)
 		free_strs(str);
 		error();
 	}
-	if (is_sorted(str) == 1)
+	if (is_sorted(str) == 1 || checker(str) == 1)
 	{
 		ft_listclear(a);
 		free_strs(str);
 		error();
 	}
-	else if (checker(str) == 1)
+	return (0);
+}
+
+int	empty_space_check(char **str)
+{
+	int		i;
+	int		j;
+	int		k;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
+		j = 0;
+		k = 0;
+		while (str[i][j])
+		{
+			if (str[i][j] == ' ')
+				k++;
+			j++;
+		}
+		if (k == j)
+			return (1);
+		i++;
 	}
+	return (0);
 }

@@ -1,5 +1,7 @@
 NAME	=	push_swap
 
+CHECKER	=	checker
+
 LIB		=	libft.a
 
 SRCS	=	srcs/push_swap.c \
@@ -18,11 +20,23 @@ SRCS	=	srcs/push_swap.c \
 			srcs/sort_funcs/sort.c \
 			srcs/parcing/parse.c \
 
+BONUS_SRCS	=	bonus/checker.c \
+				bonus/re_parse.c \
+				bonus/re_parse2.c \
+				bonus/re_parse3.c \
+				bonus/stack_sorted.c \
+				bonus/struct.c \
+				bonus/moves1.c \
+				bonus/moves2.c \
+				bonus/moves3.c \
+
 OBJ		=	$(SRCS:.c=.o)
+
+BONUS_OBJ	=	$(BONUS_SRCS:.c=.o)
 
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -g
+CFLAGS	=	-Wall -Wextra -Werror
 
 LIB_PATH =	libft/
 
@@ -38,13 +52,16 @@ $(LIB_PATH) $(LIB):
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJ)
+			$(RM) $(OBJ) $(BONUS_OBJ)
 			$(MAKE) -s -C $(LIB_PATH) clean
 
 fclean : clean
-			$(RM) $(NAME)
+			$(RM) $(NAME) $(CHECKER)
 			$(MAKE)	-s -C	$(LIB_PATH)	fclean
 
 re	: fclean all
+
+bonus: $(BONUS_OBJ) $(LIB_PATH) $(LIB)
+			$(CC) $(CFLAGS) $(BONUS_OBJ) -L $(LIB_PATH) -lft -o $(CHECKER)
 
 .PHONY: all clean fclean re

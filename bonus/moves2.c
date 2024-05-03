@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   moves2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 04:32:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 22:03:51 by ybouaoud         ###   ########.fr       */
+/*   Created: 2024/05/03 16:42:16 by ybouaoud          #+#    #+#             */
+/*   Updated: 2024/05/03 22:07:55 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/checker.h"
 
-void	error(void)
+void	sa(t_stack **stack_a)
 {
-	write(2, "Error\n", ft_strlen("Error\n"));
-	exit(1);
+	ft_swap(stack_a);
 }
 
-void	parsing(t_stack **a, char **str)
+void	sb(t_stack **stack_b)
 {
-	(*a) = stack_fill(str);
-	if (!a)
-	{
-		free_strs(str);
-		error();
-	}
-	if (is_sorted(str) == 1)
-	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
-	}
-	else if (checker(str) == 1)
-	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
-	}
+	ft_swap(stack_b);
+}
+
+void	ss(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_swap(stack_a);
+	ft_swap(stack_b);
+}
+
+void	pa(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_b, stack_a);
+}
+
+void	pb(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_a, stack_b);
 }

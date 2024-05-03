@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 01:35:19 by ybouaoud         ###   ########.fr       */
+/*   Created: 2024/05/03 16:05:33 by ybouaoud          #+#    #+#             */
+/*   Updated: 2024/05/03 22:07:13 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "../libft/libft.h"
-# include <stdlib.h>
 
-// stack structure
 typedef struct n_list
 {
 	int				content;
@@ -24,42 +22,11 @@ typedef struct n_list
 	struct n_list	*next;
 }					t_stack;
 
-typedef struct s_chunk
-{
-	int				start;
-	int				end;
-	int				*array;
-}					t_chunk;
-
-// sort
-int					sort(t_stack **a, t_stack **b);
-
 // instructions
 int					ft_swap(t_stack **stack);
 int					ft_push(t_stack **stack1, t_stack **stack2);
 int					ft_rotate(t_stack **stack);
 int					ft_reverse_rotate(t_stack **stack);
-
-// small sort functions
-int					sort_2(t_stack **stack_a);
-int					sort_3(t_stack **a);
-int					sort_4(t_stack **stack_a, t_stack **stack_b);
-int					sort_5(t_stack **stack_a, t_stack **stack_b);
-int					update_index(t_stack **stack);
-int					find_min_index(t_stack **stack);
-int					push_min_to_b(t_stack **a, t_stack **b);
-int					push_min_to_b_5(t_stack **a, t_stack **b);
-
-// big sort functions
-void				push_biggest_to_top(t_stack **b, int *arr);
-void				sort_stack(t_stack **a, t_stack **b);
-void				push_to_a(t_stack **a, t_stack **b, int *arr, int size);
-void				sort_helper(int *i, int *range, t_stack **b, int size);
-void				sort_helper2(int *i, int *range, t_stack **b, int size);
-void				give_value(int *step, int *i);
-void				push_helper(t_stack **b, int *arr, int *distance);
-int					*bubble_sort(t_stack **stack);
-int					*covert_to_arr(t_stack **a, int size);
 
 // rules
 void				sa(t_stack **stack_a);
@@ -86,7 +53,7 @@ int					list_size(t_stack **stack);
 long long			ft_atol(const char *str);
 
 // checker structure
-void				parsing(t_stack **a, char **str);
+int					parsing(t_stack **a, char **str);
 int					checker(char **av);
 int					checker2(char *av);
 int					checker3(char **av);
@@ -96,7 +63,9 @@ int					dup_check2(int *array, int len);
 int					is_sorted(char **str);
 int					empty_space_check(char **str);
 void				error(void);
-
+int					do_instructions(t_stack **a, t_stack **b, char *line);
+void				input(t_stack **a, t_stack **b);
+void				main_helper(t_stack **a, t_stack **b);
 // node functions
 void				add_node_to_list(t_stack **list, t_stack *stack, int index);
 t_stack				*stack_fill(char **argv);
