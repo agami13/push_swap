@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 05:50:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 01:28:47 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:24:22 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,12 @@ int	checker2(char *av)
 		else if ((av[i] == '-' && !(av[i + 1]))
 			|| (av[i] == '+' && !(av[i + 1])))
 			return (1);
-		else if ((av[i] <= 31) || (av[i] >= 33 && av[i] <= 44)
-			|| (av[i] >= 46 && av[i] <= 47)
+		else if ((av[i] <= 31) || (av[i] >= 33 && av[i] <= 42)
+			|| (av[i] == 44 || (av[i] >= 46 && av[i] <= 47))
 			|| (av[i] >= 58 && av[i] < 127))
 			return (1);
-		else if ((ft_atol(av) > 2147483647) || (ft_atol(av) < -2147483648))
+		else if ((av[i] >= '0' && av[i] <= '9')
+			&& (av[i + 1] == '+' || av[i + 1] == '-'))
 			return (1);
 		i++;
 	}
@@ -107,6 +108,9 @@ int	checker(char **av)
 	{
 		j = 0;
 		if (checker2(av[i]) == 1)
+			return (1);
+		else if ((ft_atol(av[i]) > 2147483647)
+			|| (ft_atol(av[i]) < -2147483648))
 			return (1);
 		while (av[i][j])
 		{

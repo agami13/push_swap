@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:07:45 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 22:07:43 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:42:27 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,26 +72,21 @@ void	main_helper(t_stack **a, t_stack **b)
 
 int	main(int argc, char *argv[])
 {
-	char	**strs;
 	t_stack	*a;
 	t_stack	*b;
+	char	**str;
 
-	if (argc < 3)
-		return (0);
+	if (argc == 1)
+		error();
 	if ((empty_space_check(argv + 1)) == 1 || nill_check(argv + 1) == 1)
 		error();
-	strs = spliting_nums(argv + 1);
-	if (!strs)
-		return (1);
-	b = NULL;
-	if (parsing(&a, strs) == 1)
-	{
-		free_strs(strs);
-		ft_listclear(&a);
+	str = spliting_nums(argv + 1);
+	if (!str)
 		error();
-	}
+	b = NULL;
+	parsing(&a, str);
 	input(&a, &b);
 	main_helper(&a, &b);
-	free_strs(strs);
+	free_strs(str);
 	return (0);
 }

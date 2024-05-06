@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:28:51 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 01:38:26 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:34:45 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ int	*covert_to_arr(t_stack **a, int size)
 		temp = temp->next;
 	}
 	return (arr);
+}
+
+void	helper_func(const char *str, int *index, int *sign)
+{
+	while (str[*index] == ' '
+		|| (str[*index] >= '\t' && str[*index] <= '\r'))
+		(*index)++;
+	if (str[*index] == '-'
+		&& (str[*index + 1] >= '0' && str[*index + 1] <= '9'))
+	{
+		(*sign) *= -1;
+		(*index)++;
+	}
+	if (str[*index] == '+'
+		&& (str[*index + 1] >= '0' && str[*index + 1] <= '9'))
+		(*index)++;
 }

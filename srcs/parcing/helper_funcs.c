@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 00:49:07 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 01:35:31 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:57:12 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,23 @@ int	ft_numlen(char **str)
 
 long long	ft_atol(const char *str)
 {
-	long long	index;
+	int			index;
 	long long	results;
 	int			sign;
 
 	index = 0;
 	results = 0;
 	sign = 1;
-	while (str[index] == ' ' || (str[index] >= '\t' && str[index] <= '\r'))
-		index++;
-	if (str[index] == '-' && (str[index + 1] >= '0' && str[index + 1] <= '9'))
-	{
-		sign *= -1;
-		index++;
-	}
-	if (str[index] == '+' && (str[index + 1] >= '0' && str[index + 1] <= '9'))
-		index++;
+	helper_func(str, &index, &sign);
 	while (str[index])
 	{
 		if (str[index] >= '0' && str[index] <= '9')
 			results = (results * 10) + (str[index] - '0');
 		else
 			break ;
+		if ((results > 2147483648 && sign == -1)
+			|| (results > 2147483647 && sign == 1))
+			return (results * sign);
 		index++;
 	}
 	return (results * sign);

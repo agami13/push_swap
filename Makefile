@@ -12,6 +12,7 @@ SRCS	=	srcs/push_swap.c \
 			srcs/rules/instructions.c \
 			srcs/rules/rules.c \
 			srcs/rules/rules2.c \
+			srcs/rules/rules3.c \
 			srcs/utils/utils.c \
 			srcs/sort_funcs/small_sort.c \
 			srcs/sort_funcs/big_sort.c \
@@ -21,14 +22,18 @@ SRCS	=	srcs/push_swap.c \
 			srcs/parcing/parse.c \
 
 BONUS_SRCS	=	bonus/checker.c \
-				bonus/re_parse.c \
-				bonus/re_parse2.c \
-				bonus/re_parse3.c \
-				bonus/stack_sorted.c \
-				bonus/struct.c \
-				bonus/moves1.c \
-				bonus/moves2.c \
-				bonus/moves3.c \
+			bonus/moves1.c \
+			bonus/moves2.c \
+			bonus/moves3.c \
+			srcs/parcing/parcing.c \
+			srcs/struct_funcs/stack_fill.c \
+			srcs/parcing/helper_funcs.c \
+			srcs/struct_funcs/struct_funcs.c \
+			srcs/rules/instructions.c \
+			srcs/utils/utils.c \
+			srcs/utils/utils2.c \
+			srcs/utils/utils3.c \
+			srcs/parcing/parse.c \
 
 OBJ		=	$(SRCS:.c=.o)
 

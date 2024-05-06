@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:52:27 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/03 01:35:19 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:32:00 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include <stdlib.h>
 
 // stack structure
 typedef struct n_list
@@ -23,13 +22,6 @@ typedef struct n_list
 	int				index;
 	struct n_list	*next;
 }					t_stack;
-
-typedef struct s_chunk
-{
-	int				start;
-	int				end;
-	int				*array;
-}					t_chunk;
 
 // sort
 int					sort(t_stack **a, t_stack **b);
@@ -75,6 +67,7 @@ void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
 
 // helper funcs
+void				helper_func(const char *str, int *index, int *sign);
 void				ft_listclear(t_stack **list);
 void				ft_listdelone(t_stack *list);
 char				**spliting_nums(char **av);
