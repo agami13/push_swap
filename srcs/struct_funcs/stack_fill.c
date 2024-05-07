@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:54:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/04/10 02:33:45 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:02:17 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_stack	*stack_fill(char **argv)
 	head = NULL;
 	while (i >= 0)
 	{
-		stack = create_node(ft_atoi(argv[i]));
+		stack = create_node(ft_atol(argv[i]));
 		if (!stack)
 		{
 			ft_listclear(&head);
