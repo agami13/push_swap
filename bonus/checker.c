@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:07:45 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/07 01:39:53 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/12 03:44:32 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	do_instructions(t_stack **a, t_stack **b, char *line)
 	return (1);
 }
 
-void	input(t_stack **a, t_stack **b)
+void	input(t_stack **a, t_stack **b, char **str)
 {
 	char	*input;
 
@@ -51,8 +51,12 @@ void	input(t_stack **a, t_stack **b)
 		if (!do_instructions(a, b, input))
 		{
 			free(input);
+			get_next_line(-1);
 			ft_putstr_fd("Error\n", 1);
-			exit(-1);
+			free_strs(str);
+			ft_listclear(a);
+			ft_listclear(b);
+			exit(1);
 		}
 		free(input);
 		input = get_next_line(0);
@@ -70,6 +74,22 @@ void	main_helper(t_stack **a, t_stack **b)
 	ft_listclear(b);
 }
 
+void	mini_checker(t_stack **a, char **str)
+{
+	(*a) = stack_fill(str);
+	if (!a)
+	{
+		free_strs(str);
+		error();
+	}
+	if (checker(str) == 1)
+	{
+		ft_listclear(a);
+		free_strs(str);
+		error();
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -84,8 +104,8 @@ int	main(int argc, char *argv[])
 	if (!str)
 		error();
 	b = NULL;
-	parsing(&a, str);
-	input(&a, &b);
+	mini_checker(&a, str);
+	input(&a, &b, str);
 	main_helper(&a, &b);
 	free_strs(str);
 	return (0);

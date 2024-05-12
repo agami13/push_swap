@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 04:32:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/04 15:48:11 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/12 03:36:55 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ void	parsing(t_stack **a, char **str)
 	{
 		ft_listclear(a);
 		free_strs(str);
-		error();
-	}
-	else if (checker(str) == 1)
-	{
-		ft_listclear(a);
-		free_strs(str);
-		error();
+		exit(0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:05:33 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/06 20:49:32 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/12 03:26:43 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 // main funcs
 int					do_instructions(t_stack **a, t_stack **b, char *line);
-void				input(t_stack **a, t_stack **b);
+void				input(t_stack **a, t_stack **b, char **str);
 void				main_helper(t_stack **a, t_stack **b);
 void				helper_func(const char *str, int *index, int *sign);
-
+void				mini_checker(t_stack **a, char **str);
 // rules
 void				sa(t_stack **stack_a);
 void				sb(t_stack **stack_b);

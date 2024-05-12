@@ -6,7 +6,7 @@
 /*   By: ybouaoud <ybouaoud@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:20:31 by ybouaoud          #+#    #+#             */
-/*   Updated: 2024/05/06 19:28:24 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2024/05/12 02:50:11 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*cup[1024];
 
+	if (fd == -1)
+	{
+		free(cup[0]);
+		cup[0] = NULL;
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	cup[fd] = read_file(fd, cup[fd]);
